@@ -11,8 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import lab5gLogo from "./img/logo.png";
+import DeployButton from "./DeployButton";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -39,7 +39,13 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={lab5gLogo} alt="logo" width="100" height="110" />
+          <img
+            src={lab5gLogo}
+            alt="logo"
+            width="70"
+            height="80"
+            object-fit="contain"
+          />
           <Typography
             variant="h6"
             noWrap
@@ -94,7 +100,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
@@ -111,7 +117,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            OpenLabs
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -123,6 +129,7 @@ function Header() {
                 {page}
               </Button>
             ))}
+            <DeployButton />
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
