@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import lab5gLogo from "./img/logo.png";
 import DeployButton from "./DeployButton";
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "Projects", "Contacts"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Header() {
