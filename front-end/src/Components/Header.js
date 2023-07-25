@@ -13,10 +13,17 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import lab5gLogo from "./img/logo.png";
 import DeployButton from "./DeployButton";
-const pages = ["Home", "Projects", "Contacts"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+  const pages = ["Home", "Projects", "Contacts"];
+  const pageRoute = [
+    () => navigate(""),
+    () => navigate(""),
+    () => navigate(""),
+  ];
+  const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -93,8 +100,8 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, i) => (
+                <MenuItem key={page} onClick={pageRoute[i]}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -120,10 +127,10 @@ function Header() {
             OpenLabs
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, i) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={pageRoute[i]}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}

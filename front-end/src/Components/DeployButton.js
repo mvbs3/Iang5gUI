@@ -2,8 +2,10 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { useNavigate } from "react-router-dom";
 
 export default function DeployButton() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -34,9 +36,30 @@ export default function DeployButton() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Oai 5g SA</MenuItem>
-        <MenuItem onClick={handleClose}>Open5gs SA</MenuItem>
-        <MenuItem onClick={handleClose}>Open5gs 4g/5gNSA</MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            navigate("Deploy5gSa");
+          }}
+        >
+          Oai 5g SA
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            navigate("Deploy5gSa");
+          }}
+        >
+          Open5gs SA
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            navigate("Deploy5gSa");
+          }}
+        >
+          Open5gs 4g/5gNSA
+        </MenuItem>
       </Menu>
     </div>
   );
