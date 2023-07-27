@@ -5,6 +5,8 @@ import Header from "./Components/Header";
 import { Routes, Route } from "react-router-dom";
 import BodyHome from "./Components/BodyHome";
 import BodyDeploy5gSA from "./Components/BodyDeploy5gSA";
+import BodyDeploy4g from "./Components/BodyDeploy4g";
+
 function App() {
   return (
     <React.Fragment>
@@ -13,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<BodyHome />}></Route>
         <Route path="/Deploy5gSa" element={<BodyDeploy5gSA />}></Route>
+        <Route path="/Deploy4g" element={<BodyDeploy4g />}></Route>
       </Routes>
     </React.Fragment>
   );

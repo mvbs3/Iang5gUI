@@ -55,7 +55,7 @@ export default function DeployButton() {
         <MenuItem
           onClick={() => {
             handleClose();
-            navigate("Deploy5gSa");
+            navigate("Deploy4g");
           }}
         >
           Open5gs 4g/5gNSA

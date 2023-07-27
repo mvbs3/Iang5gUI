@@ -2,38 +2,41 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-const coreComponents5g = [
-  "AMF",
-  "SMF",
+const coreComponents4g = [
+  "MME",
+  "SGWC",
+  "SGWU",
   "UPF",
+  "SMF",
+  "OSMOMSC",
+  "MONGO",
   "NRF",
-  "UDM",
-  "UDR",
-  "AUSF",
-  "MYSQL",
+  "SCP",
+  "OSMOHLR",
+  "PCRF",
+  "WEBUI",
 ];
-const bodyItens = [
-  "Core 5g SA (OpenAir)",
-  "GNB SA(OpenAir)",
-  "UE's",
-  "App's MEC",
-];
+const bodyItens = ["Core 4g (OpenAir)", "ENB (SRSRan)", "UE's", "------"];
 
-export default function bodyDeploy4g(props) {
-  const [statusCore5g, setStatusCore5g] = useState({
-    AMF: "Offline",
-    SMF: "Offline",
+export default function BodyDeploy4g(props) {
+  const [statusCore4g, setStatusCore4g] = useState({
+    MME: "Offline",
+    SGWC: "Offline",
+    SGWU: "Offline",
     UPF: "Offline",
+    SMF: "Offline",
+    OSMOMSC: "Offline",
+    MONGO: "Offline",
     NRF: "Offline",
-    UDM: "Offline",
-    UDR: "Offline",
-    AUSF: "Offline",
-    MYSQL: "Offline",
+    SCP: "Offline",
+    OSMOHLR: "Offline",
+    PCRF: "Offline",
+    WEBUI: "Offline",
   });
 
   const componentsBox = {
     bgcolor: "#999999",
-    height: "50vh",
+    height: "60vh",
     maxWidth: "40%",
     alignItems: "center",
     flexDirection: "columns",
@@ -65,8 +68,8 @@ export default function bodyDeploy4g(props) {
         {" "}
         <div style={wrapBox}>
           <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>Core 5g SA (OpenAir) </h1>
-            {coreComponents5g.map((component) => {
+            <h1 style={{ textAlign: "center" }}>Core 4g SA (OpenAir) </h1>
+            {coreComponents4g.map((component) => {
               return <h4 style={{ fontSize: "12px" }}>{component}</h4>;
             })}
             <button>Estatística</button>
@@ -75,7 +78,7 @@ export default function bodyDeploy4g(props) {
           </Box>
 
           <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>s
+            <h1 style={{ textAlign: "center" }}>ENB (SRSRan) </h1>
             <button>Devices Conectados</button>
             <button>Ligar</button>
             <button>Configuração</button>
@@ -85,7 +88,7 @@ export default function bodyDeploy4g(props) {
           </Box>
 
           <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>App's MEC </h1>
+            <h1 style={{ textAlign: "center" }}>----- </h1>
             <h2> Apps inseridos atualmente : </h2>
             <button>Adicionar</button>
             <button>Remover</button>
