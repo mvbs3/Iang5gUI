@@ -19,7 +19,7 @@ const bodyItens = [
   "App's MEC",
 ];
 
-export default function BodyDeplo5g(props) {
+export default function bodyDeploy4g(props) {
   const [statusCore5g, setStatusCore5g] = useState({
     AMF: "Offline",
     SMF: "Offline",
@@ -75,7 +75,7 @@ export default function BodyDeplo5g(props) {
           </Box>
 
           <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>
+            <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>s
             <button>Devices Conectados</button>
             <button>Ligar</button>
             <button>Configuração</button>

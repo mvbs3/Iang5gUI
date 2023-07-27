@@ -173,7 +173,7 @@ export default function BodyHome() {
         Url: "inserir diretorio pra acessar a pagcerta",
       },
     };
-    let printer = [];
+    let printer = [];@babel/plugin-proposal-private-property-in-object
     Object.keys(core).map((key, i) => {
       printer.push(
         <div style={{ padding: 10 }}>
