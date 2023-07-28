@@ -2,6 +2,17 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import DialogButton from "./DialogButton";
+import gnb from "./img/gnb.png";
+const gnbInfo = [
+  "PLMN",
+  "Banda",
+  "Status",
+  "Subcarrier spacing",
+  "Other Frequencies",
+  "RNTI",
+  "QOS",
+];
 const coreComponents5g = [
   "AMF",
   "SMF",
@@ -18,6 +29,33 @@ const bodyItens = [
   "UE's",
   "App's MEC",
 ];
+function isFunctionOnline(coreFunc, statusCoreFunc) {
+  const online = {
+    backgroundColor: "green",
+    fontSize: "15px",
+    padding: "15px 32px",
+    color: "black",
+  };
+  const offline = {
+    backgroundColor: "red",
+    fontSize: "15px",
+    padding: "15px 32px",
+    color: "black",
+  };
+  const bug = {
+    backgroundColor: "yellow",
+    fontSize: "15px",
+    padding: "15px 32px",
+    color: "black",
+  };
+  if (statusCoreFunc[coreFunc] === "Online") {
+    return online;
+  } else if (statusCoreFunc[coreFunc] === "Offline") {
+    return offline;
+  } else {
+    return bug;
+  }
+}
 
 export default function BodyDeplo5g(props) {
   const [statusCore5g, setStatusCore5g] = useState({
@@ -34,20 +72,25 @@ export default function BodyDeplo5g(props) {
   const componentsBox = {
     bgcolor: "#999999",
     height: "50vh",
-    maxWidth: "40%",
     alignItems: "center",
-    flexDirection: "columns",
     padding: 1,
     margin: 2,
     flexBasis: "100%",
   };
+
   const wrapBox = {
     display: "flex",
     flexDirection: "row",
     backgroundColor: "#ffffff",
-    maxWidth: "200vh",
+    width: "1800px",
     justifyContent: "center",
-    flexWrap: "wrap",
+  };
+
+  const boxInside = {
+    height: "100%",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   };
   return (
     <>
@@ -62,20 +105,59 @@ export default function BodyDeplo5g(props) {
           display: "flex",
         }}
       >
-        {" "}
         <div style={wrapBox}>
           <Box sx={componentsBox}>
             <h1 style={{ textAlign: "center" }}>Core 5g SA (OpenAir) </h1>
-            {coreComponents5g.map((component) => {
-              return <h4 style={{ fontSize: "12px" }}>{component}</h4>;
-            })}
-            <button>Estatística</button>
-            <button>Ligar</button>
-            <button>Configuração</button>
+            <div style={boxInside}>
+              <div
+                style={{
+                  flexDirection: "row !important",
+                  display: "flex",
+                  padding: 1,
+                  justifyContent: "space-evenly",
+                }}
+              >
+                {coreComponents5g.map((component) => {
+                  return (
+                    <DialogButton
+                      CoreComponnents={component}
+                      StyleButton={isFunctionOnline(component, statusCore5g)}
+                    ></DialogButton>
+                  );
+                })}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <button>Estatística</button>
+                <button>Ligar</button>
+                <button>Configuração</button>
+              </div>
+            </div>
           </Box>
-
+        </div>
+        <div style={wrapBox}>
           <Box sx={componentsBox}>
             <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <img
+                src={gnb}
+                style={{
+                  height: "30vh",
+                }}
+              />
+            </div>
             <button>Devices Conectados</button>
             <button>Ligar</button>
             <button>Configuração</button>
