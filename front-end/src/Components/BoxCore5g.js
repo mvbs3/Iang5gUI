@@ -5,6 +5,7 @@ import DialogButton from "./DialogButton";
 import Dropdown5gDeploys from "./Dropdown5gDeploy";
 
 export default function BoxCore5g(props) {
+  const [deploy, setDeploy] = React.useState("");
   const coreComponents5g = [
     "AMF",
     "SMF",
@@ -15,6 +16,7 @@ export default function BoxCore5g(props) {
     "AUSF",
     "MYSQL",
   ];
+
   const [statusCore5g, setStatusCore5g] = useState({
     AMF: "Offline",
     SMF: "Offline",
@@ -25,6 +27,7 @@ export default function BoxCore5g(props) {
     AUSF: "Offline",
     MYSQL: "Offline",
   });
+
   function isFunctionOnline(coreFunc, statusCoreFunc) {
     const online = {
       backgroundColor: "green",
@@ -56,20 +59,27 @@ export default function BoxCore5g(props) {
   return (
     <Box sx={props.componentsBox}>
       <div style={props.titleBodyDivider}>
-        <div>
-          <h1 style={{ textAlign: "center" }}>Core 5g SA (OpenAir) </h1>
-        </div>
         <div style={props.boxInside}>
           <div
             style={{
               height: "100%",
               width: "100%",
-              backgroundColor: "white",
+              padding: "10px",
             }}
           >
-            <div style={{ flexDirection: "row", display: "flex" }}>
-              <h2> Core Type:</h2>
-              <Dropdown5gDeploys />
+            <div>
+              <h1 style={{ textAlign: "center" }}>Core 5g SA </h1>
+            </div>
+            <div
+              style={{
+                flexDirection: "row",
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <h2> Core Type </h2>
+              <Dropdown5gDeploys deploy={deploy} setDeploy={setDeploy} />
             </div>
 
             <div
@@ -94,8 +104,6 @@ export default function BoxCore5g(props) {
               padding: 1,
               height: "100%",
               width: "100%",
-
-              backgroundColor: "blue",
             }}
           >
             {coreComponents5g.map((component) => {

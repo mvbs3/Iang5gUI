@@ -1,0 +1,67 @@
+.toggle-container {
+  width: 320px;
+  height: 40px;
+  background: lightgrey;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  font-family: lora, sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.slider {
+  width: 160px; /* Adjusted to better fit the text */
+  height: 40px; /* Same as the height of .toggle-container */
+  border-radius: 30px; /* Same as the border-radius of .toggle-container */
+  position: absolute;
+  transition: 0.2s;
+  border: 2px solid lightgrey;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: flex; /* Added to center the text */
+  align-items: center; /* Added to center the text vertically */
+  justify-content: center; /* Added to center the text horizontally */
+}
+
+.slider-text {
+  font-size: 16px; /* Set the font size of the text */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-text.MEC {
+  color: #333; /* Dark gray for MEC */
+}
+
+.slider-text.Server {
+  color: #524f4f; /* Medium gray for Server */
+}
+
+.slider.MEC {
+  left: 0%; /* Adjusted position */
+  background: lightblue; /* Light shade of blue */
+}
+
+.slider.Server {
+  left: 50%;
+  background: rgb(87, 158, 230); /* Medium shade of blue */
+}
+
+.title {
+  text-align: center;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.title.MEC {
+  color: #245494;
+}
+
+.title.Server {
+  color: #501c1c;
+}

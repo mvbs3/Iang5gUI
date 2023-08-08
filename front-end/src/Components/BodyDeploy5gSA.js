@@ -27,7 +27,7 @@ const bodyItens = [
 
 export default function BodyDeplo5g(props) {
   const bodyStyle = {
-    bgcolor: "pink",
+    bgcolor: "white",
     height: "100vh",
     alignItems: "center",
     flexDirection: "Column",
@@ -38,7 +38,7 @@ export default function BodyDeplo5g(props) {
   const wrapBox = {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "#ffffff",
+    backgroundColor: "pink",
     height: "100%",
     width: "100%",
     padding: "10px",
@@ -47,18 +47,17 @@ export default function BodyDeplo5g(props) {
   };
 
   const titleBodyDivider = {
+    backgroundColor: "#D9D9D9",
     height: "100%",
     width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "yellow",
   };
   const componentsBox = {
-    bgcolor: "green",
     height: "100%",
     alignItems: "center",
-    margin: "2px",
+    padding: "10px",
     flexBasis: "100%",
   };
 
@@ -69,7 +68,6 @@ export default function BodyDeplo5g(props) {
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "black",
   };
 
   return (
@@ -82,14 +80,15 @@ export default function BodyDeplo5g(props) {
         />
       </div>
       <div style={wrapBox}>
-        <BoxGnb
-          componentsBox={componentsBox}
-          titleBodyDivider={titleBodyDivider}
-        />
         <BoxUe
           componentsBox={componentsBox}
           titleBodyDivider={titleBodyDivider}
         />
+        <BoxGnb
+          componentsBox={componentsBox}
+          titleBodyDivider={titleBodyDivider}
+        />
+
         <BoxApps
           componentsBox={componentsBox}
           titleBodyDivider={titleBodyDivider}

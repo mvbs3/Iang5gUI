@@ -1,12 +1,20 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import { ToggleSelector } from "./ToggleSelector";
 
 export default function BoxApps(props) {
   return (
     <Box sx={props.componentsBox}>
       <div style={props.titleBodyDivider}>
-        <div>
-          <h1 style={{ textAlign: "center" }}>App's MEC </h1>
+        <div
+          style={{
+            alignItem: "center",
+            display: "flex",
+
+            padding: "10px",
+          }}
+        >
+          <ToggleSelector />
         </div>
         <div>
           <h2> Apps inseridos atualmente : </h2>
