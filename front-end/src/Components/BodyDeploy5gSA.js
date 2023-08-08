@@ -4,6 +4,10 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import DialogButton from "./DialogButton";
 import gnb from "./img/gnb.png";
+import BoxCore5g from "./BoxCore5g";
+import BoxGnb from "./BoxGnb";
+import BoxUe from "./BoxUe";
+import BoxApps from "./BoxApps";
 const gnbInfo = [
   "PLMN",
   "Banda",
@@ -13,167 +17,84 @@ const gnbInfo = [
   "RNTI",
   "QOS",
 ];
-const coreComponents5g = [
-  "AMF",
-  "SMF",
-  "UPF",
-  "NRF",
-  "UDM",
-  "UDR",
-  "AUSF",
-  "MYSQL",
-];
+
 const bodyItens = [
   "Core 5g SA (OpenAir)",
   "GNB SA(OpenAir)",
   "UE's",
   "App's MEC",
 ];
-function isFunctionOnline(coreFunc, statusCoreFunc) {
-  const online = {
-    backgroundColor: "green",
-    fontSize: "15px",
-    padding: "15px 32px",
-    color: "black",
-  };
-  const offline = {
-    backgroundColor: "red",
-    fontSize: "15px",
-    padding: "15px 32px",
-    color: "black",
-  };
-  const bug = {
-    backgroundColor: "yellow",
-    fontSize: "15px",
-    padding: "15px 32px",
-    color: "black",
-  };
-  if (statusCoreFunc[coreFunc] === "Online") {
-    return online;
-  } else if (statusCoreFunc[coreFunc] === "Offline") {
-    return offline;
-  } else {
-    return bug;
-  }
-}
 
 export default function BodyDeplo5g(props) {
-  const [statusCore5g, setStatusCore5g] = useState({
-    AMF: "Offline",
-    SMF: "Offline",
-    UPF: "Offline",
-    NRF: "Offline",
-    UDM: "Offline",
-    UDR: "Offline",
-    AUSF: "Offline",
-    MYSQL: "Offline",
-  });
-
-  const componentsBox = {
-    bgcolor: "#999999",
-    height: "50vh",
+  const bodyStyle = {
+    bgcolor: "pink",
+    height: "100vh",
     alignItems: "center",
-    padding: 1,
-    margin: 2,
-    flexBasis: "100%",
+    flexDirection: "Column",
+    padding: 10,
+    margin: 1,
+    display: "flex",
   };
-
   const wrapBox = {
     display: "flex",
     flexDirection: "row",
     backgroundColor: "#ffffff",
-    width: "1800px",
+    height: "100%",
+    width: "100%",
+    padding: "10px",
+    flex: "1",
     justifyContent: "center",
+  };
+
+  const titleBodyDivider = {
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "yellow",
+  };
+  const componentsBox = {
+    bgcolor: "green",
+    height: "100%",
+    alignItems: "center",
+    margin: "2px",
+    flexBasis: "100%",
   };
 
   const boxInside = {
     height: "100%",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
     alignItems: "center",
+    backgroundColor: "black",
   };
+
   return (
-    <>
-      <Box
-        sx={{
-          bgcolor: "#1976D2",
-          height: "100%",
-          alignItems: "center",
-          flexDirection: "Column",
-          padding: 10,
-          margin: 1,
-          display: "flex",
-        }}
-      >
-        <div style={wrapBox}>
-          <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>Core 5g SA (OpenAir) </h1>
-            <div style={boxInside}>
-              <div
-                style={{
-                  flexDirection: "row !important",
-                  display: "flex",
-                  padding: 1,
-                  justifyContent: "space-evenly",
-                }}
-              >
-                {coreComponents5g.map((component) => {
-                  return (
-                    <DialogButton
-                      CoreComponnents={component}
-                      StyleButton={isFunctionOnline(component, statusCore5g)}
-                    ></DialogButton>
-                  );
-                })}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexDirection: "row",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <button>Estatística</button>
-                <button>Ligar</button>
-                <button>Configuração</button>
-              </div>
-            </div>
-          </Box>
-        </div>
-        <div style={wrapBox}>
-          <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
-              <img
-                src={gnb}
-                style={{
-                  height: "30vh",
-                }}
-              />
-            </div>
-            <button>Devices Conectados</button>
-            <button>Ligar</button>
-            <button>Configuração</button>
-          </Box>
-          <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>UE's </h1>
-          </Box>
-
-          <Box sx={componentsBox}>
-            <h1 style={{ textAlign: "center" }}>App's MEC </h1>
-            <h2> Apps inseridos atualmente : </h2>
-            <button>Adicionar</button>
-            <button>Remover</button>
-          </Box>
-        </div>
-      </Box>
-    </>
+    <Box sx={bodyStyle}>
+      <div style={wrapBox}>
+        <BoxCore5g
+          componentsBox={componentsBox}
+          boxInside={boxInside}
+          titleBodyDivider={titleBodyDivider}
+        />
+      </div>
+      <div style={wrapBox}>
+        <BoxGnb
+          componentsBox={componentsBox}
+          titleBodyDivider={titleBodyDivider}
+        />
+        <BoxUe
+          componentsBox={componentsBox}
+          titleBodyDivider={titleBodyDivider}
+        />
+        <BoxApps
+          componentsBox={componentsBox}
+          titleBodyDivider={titleBodyDivider}
+        />
+      </div>
+    </Box>
   );
 }
