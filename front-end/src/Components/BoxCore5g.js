@@ -3,6 +3,8 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import DialogButton from "./DialogButton";
 import Dropdown5gDeploys from "./Dropdown5gDeploy";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 export default function BoxCore5g(props) {
   const [deploy, setDeploy] = React.useState("");
@@ -55,7 +57,11 @@ export default function BoxCore5g(props) {
       return bug;
     }
   }
-
+  const buttonCoreStyle = {
+    color: "#54849C",
+    margin: 5,
+    color: "black",
+  };
   return (
     <Box sx={props.componentsBox}>
       <div style={props.titleBodyDivider}>
@@ -63,36 +69,73 @@ export default function BoxCore5g(props) {
           <div
             style={{
               height: "100%",
-              width: "100%",
+              width: "50%",
               padding: "10px",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-            <div>
-              <h1 style={{ textAlign: "center" }}>Core 5g SA </h1>
-            </div>
             <div
               style={{
-                flexDirection: "row",
+                height: "20%",
+
                 display: "flex",
-                justifyContent: "flex-start",
+                justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <h2> Core Type </h2>
-              <Dropdown5gDeploys deploy={deploy} setDeploy={setDeploy} />
+              <h2 style={{ textAlign: "center" }}>Core 5G SA </h2>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "row",
-                justifyContent: "flex-start",
-              }}
-            >
-              <button>Estatística</button>
-              <button>Ligar</button>
-              <button>Configuração</button>
+            <div style={{ height: "100%" }}>
+              <div
+                style={{
+                  flexDirection: "row",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  maxHeight: "100%",
+                }}
+              >
+                <h2> Core Type </h2>
+                <Dropdown5gDeploys deploy={deploy} setDeploy={setDeploy} />
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  height: "40%",
+                }}
+              >
+                <div style={{ height: "100%" }}>
+                  <Button
+                    style={buttonCoreStyle}
+                    variant="contained"
+                    size="small"
+                  >
+                    Estatistica
+                  </Button>
+                  <Button
+                    style={buttonCoreStyle}
+                    variant="contained"
+                    size="small"
+                  >
+                    Ligar
+                  </Button>
+                </div>
+                <div style={{ height: "100%" }}>
+                  <Button
+                    style={buttonCoreStyle}
+                    variant="contained"
+                    size="small"
+                  >
+                    Configuração
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -104,6 +147,7 @@ export default function BoxCore5g(props) {
               padding: 1,
               height: "100%",
               width: "100%",
+              backgroundColor: "black",
             }}
           >
             {coreComponents5g.map((component) => {

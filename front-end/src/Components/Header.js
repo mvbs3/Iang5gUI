@@ -50,7 +50,7 @@ function Header() {
             src={lab5gLogo}
             alt="logo"
             width="70"
-            height="80"
+            height="100%"
             object-fit="contain"
           />
           <Typography

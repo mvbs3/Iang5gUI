@@ -39,7 +39,7 @@ export default function BodyHome() {
     let printer = [];
     Object.keys(core).map((key, i) => {
       printer.push(
-        <div style={{ padding: 10 }}>
+        <div style={{ paddingTop: 0, padding: 10, height: "100%" }}>
           <CardDeploy
             Title={core[key].Title}
             Description={core[key].Description}
@@ -53,10 +53,11 @@ export default function BodyHome() {
     return printer;
   }
   return (
-    <div>
-      <Container fixed>
+    <div style={{ height: "100%" }}>
+      <Container fixed sx={{ height: "50%" }}>
         <div
           style={{
+            height: "100%",
             padding: "3px",
             display: "flex",
             justifyContent: "center",
@@ -66,153 +67,41 @@ export default function BodyHome() {
           <img
             src={bgLab}
             flex="1"
-            width="70%"
-            height="auto"
+            height="100%"
+            width="50%"
             display="block"
             margin-left="auto"
             margin-right="auto"
             alt="imagem de background do centro do body"
           />
         </div>
-        {/* <div
-      style={{
-        backgroundImage: `url(${bgLab})`,
-        flex: "1",
-        width: "100%",
-        height: "auto",
-        justifyContent: "center",
-        backgroundPosition: "center",
-        backgroundSize: "contain",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div
-        style={{
-          color: "black",
-          fontSize: 42,
-          lineHeight: 10,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "#000000c0",
-        }}
-      >
-        testefunction cardsEnviroment() {
-    const core = {
-      Oai5gSa: {
-        Title: "OpenAir 5g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, conseccardsEnviromenttetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorfunction cardsEnviroment() {
-    const core = {
-      Oai5gSa: {
-        Title: "OpenAir 5g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, conseccardsEnviromenttetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-      Oai4g: {
-        Title: "OpenAir 4g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-      Open5gSa: {
-        Title: "Open5gs 5g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-      Open5gNsa: {
-        Title: "Open5gs 5g NSA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-    };
-    let printer = [];
-    Object.keys(core).map((key, i) => {
-      printer.push(
-        <div style={{ padding: 10 }}>
-          <CardDeploy
-            Title={core[key].Title}
-            Description={core[key].Description}
-            Img={core[key].Img}
-            Url={core[key].Url}
-          />
-        </div>
-      );
-      return 0;
-    });
-    return printer;
-  }io pra acessar a pagcerta",
-      },
-      Oai4g: {
-        Title: "OpenAir 4g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-      Open5gSa: {
-        Title: "Open5gs 5g SA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-      Open5gNsa: {
-        Title: "Open5gs 5g NSA",
-        Description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum risus nec libero faucibus faucibus.",
-        Img: "openAir5gLogo.png",
-        Url: "inserir diretorio pra acessar a pagcerta",
-      },
-    };
-    let printer = [];@babel/plugin-proposal-private-property-in-object
-    Object.keys(core).map((key, i) => {
-      printer.push(
-        <div style={{ padding: 10 }}>
-          <CardDeploy
-            Title={core[key].Title}
-            Description={core[key].Description}
-            Img={core[key].Img}
-            Url={core[key].Url}
-          />
-        </div>
-      );
-      return 0;
-    });
-    return printer;
-  }
-      </div>
-    </div>*/}
       </Container>
       <Box
         sx={{
           bgcolor: "#1976D2",
-          height: "50vh",
+          height: "40%",
           alignItems: "center",
           flexDirection: "columns",
         }}
       >
-        <h1
-          style={{
-            justifyContent: "center",
-            textAlign: "center",
-            color: "black",
-            display: "block",
-            padding: 5,
-          }}
-        >
-          Deploys
-        </h1>
+        <div style={{ height: "25%" }}>
+          <h2
+            style={{
+              justifyContent: "center",
+              textAlign: "center",
+              color: "black",
+              display: "flex",
+              padding: 5,
+              fontSize: "10",
+            }}
+          >
+            Deploys
+          </h2>
+        </div>
+
         <Container
           sx={{
+            height: "50%",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
@@ -221,9 +110,17 @@ export default function BodyHome() {
           {cardsEnviroment()}
         </Container>
       </Box>
-      <Box>
-        <Container>
+
+      <Container sx={{ maxHeight: "100%" }}>
+        <div
+          style={{
+            maxHeight: "100%",
+            backgroundColor: "#D9D9D9",
+            margin: "10px",
+          }}
+        >
           <h1 style={{ textAlign: "center" }}>Sobre o laboratório</h1>
+
           <h2 style={{ textAlign: "center" }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             elementum risus nec libero faucibus faucibus. Suspendisse potenti.
@@ -238,8 +135,8 @@ export default function BodyHome() {
             finibus. Nunc lobortis bibendum ante lacinia congue. Duis ut gravida
             odio.
           </h2>
-        </Container>
-      </Box>
+        </div>
+      </Container>
     </div>
   );
 }

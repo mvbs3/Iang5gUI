@@ -31,7 +31,7 @@ export default function BodyDeplo5g(props) {
     height: "100vh",
     alignItems: "center",
     flexDirection: "Column",
-    padding: 10,
+    padding: 3,
     margin: 1,
     display: "flex",
   };

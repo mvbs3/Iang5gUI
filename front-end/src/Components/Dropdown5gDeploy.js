@@ -23,9 +23,6 @@ export default function Dropdown5gDeploys(props) {
         label="Deploy"
         onChange={handleChange}
       >
-        <MenuItem value="">
-          <em>""</em>
-        </MenuItem>
         {deploy5g.map((elem) => {
           return <MenuItem value={elem}>{elem}</MenuItem>;
         })}
