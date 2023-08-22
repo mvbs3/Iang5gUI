@@ -8,16 +8,11 @@ import Button from "@mui/material/Button";
 
 export default function BoxCore5g(props) {
   const [deploy, setDeploy] = React.useState("");
-  const coreComponents5g = [
-    "AMF",
-    "SMF",
-    "UPF",
-    "NRF",
-    "UDM",
-    "UDR",
-    "AUSF",
-    "MYSQL",
-  ];
+
+  const netFunctionsControl = ["AMF", "SMF"];
+  const signaling = ["NRF", "AUSF"];
+  const dataBase = ["UDM", "UDR", "MYSQL"];
+  const netFunctionsData = ["UPF"];
 
   const [statusCore5g, setStatusCore5g] = useState({
     AMF: "Offline",
@@ -32,21 +27,24 @@ export default function BoxCore5g(props) {
 
   function isFunctionOnline(coreFunc, statusCoreFunc) {
     const online = {
-      backgroundColor: "green",
+      backgroundColor: "#264A61",
       fontSize: "15px",
-      padding: "15px 32px",
+      padding: "10px 20px",
+      margin: "5px",
       color: "black",
     };
     const offline = {
-      backgroundColor: "red",
+      backgroundColor: "#91a0a9",
       fontSize: "15px",
-      padding: "15px 32px",
+      padding: "10px 20px",
+      margin: "5px",
       color: "black",
     };
     const bug = {
       backgroundColor: "yellow",
       fontSize: "15px",
-      padding: "15px 32px",
+      padding: "10px 20px",
+      margin: "5px",
       color: "black",
     };
     if (statusCoreFunc[coreFunc] === "Online") {
@@ -61,6 +59,23 @@ export default function BoxCore5g(props) {
     color: "#54849C",
     margin: 5,
     color: "black",
+  };
+  const dottedLine = {
+    maxWidth: "100%",
+    height: "90%",
+    /*background-color: #242729;*/
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px",
+    margin: "10px",
+
+    border: "3px dotted #264A61",
+  };
+  const netFunctionStyle = {
+    height: "100%",
+    display: "flex",
+    flexDirection: "row",
   };
   return (
     <Box sx={props.componentsBox}>
@@ -141,23 +156,90 @@ export default function BoxCore5g(props) {
 
           <div
             style={{
-              flexWrap: "wrap",
-              flexDirection: "",
+              flexDirection: "column",
               display: "flex",
               padding: 1,
               height: "100%",
               width: "100%",
-              backgroundColor: "black",
             }}
           >
-            {coreComponents5g.map((component) => {
-              return (
-                <DialogButton
-                  CoreComponnents={component}
-                  StyleButton={isFunctionOnline(component, statusCore5g)}
-                ></DialogButton>
-              );
-            })}
+            <div
+              style={{
+                display: "flex",
+                height: "100%",
+              }}
+            >
+              <div style={{ height: "100%" }}>
+                <h3> Control Plane: </h3>
+              </div>
+
+              <div style={dottedLine}>
+                <h3>Netwok Functions</h3>
+                <div style={netFunctionStyle}>
+                  {netFunctionsControl.map((component) => {
+                    return (
+                      <DialogButton
+                        CoreComponnents={component}
+                        StyleButton={isFunctionOnline(component, statusCore5g)}
+                      ></DialogButton>
+                    );
+                  })}
+                </div>
+              </div>
+              <div style={dottedLine}>
+                <h3>Signaling</h3>
+                <div style={netFunctionStyle}>
+                  {signaling.map((component) => {
+                    return (
+                      <DialogButton
+                        CoreComponnents={component}
+                        StyleButton={isFunctionOnline(component, statusCore5g)}
+                      ></DialogButton>
+                    );
+                  })}
+                </div>
+              </div>
+              <div style={dottedLine}>
+                <h3>Data Base</h3>
+                <div style={netFunctionStyle}>
+                  {dataBase.map((component) => {
+                    return (
+                      <DialogButton
+                        CoreComponnents={component}
+                        StyleButton={isFunctionOnline(component, statusCore5g)}
+                      ></DialogButton>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                height: "100%",
+              }}
+            >
+              <h3> Data Plane: </h3>
+              <div style={{ width: "100%" }}>
+                <div style={dottedLine}>
+                  <h3>Netwok Functions</h3>
+
+                  <div style={netFunctionStyle}>
+                    {netFunctionsData.map((component) => {
+                      return (
+                        <DialogButton
+                          CoreComponnents={component}
+                          StyleButton={isFunctionOnline(
+                            component,
+                            statusCore5g
+                          )}
+                        ></DialogButton>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
