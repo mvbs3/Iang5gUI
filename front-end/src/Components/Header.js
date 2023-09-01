@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import lab5gLogo from "./img/logo.png";
-import DeployButton from "./DeployButton";
+import DeployButton from "./auxiliarComponents/DeployButton";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -68,7 +68,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            OpenLabs
+            IANG
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -124,7 +124,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            OpenLabs
+            IANG
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, i) => (

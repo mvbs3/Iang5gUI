@@ -12,7 +12,7 @@ export default function CardDeploy(props) {
         <CardMedia
           component="img"
           height="140"
-          image={require("./img/" + props.Img)}
+          image={require("../img/" + props.Img)}
           alt="teste"
         />
         <CardContent>

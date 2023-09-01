@@ -2,12 +2,12 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import DialogButton from "./DialogButton";
-import gnb from "./img/gnb.png";
-import BoxCore5g from "./BoxCore5g";
-import BoxGnb from "./BoxGnb";
-import BoxUe from "./BoxUe";
-import BoxApps from "./BoxApps";
+import DialogButton from "../auxiliarComponents/DialogButton";
+import gnb from "../img/gnb.png";
+import BoxCore5g from "../boxComponents/BoxCore5g";
+import BoxGnb from "../boxComponents/BoxGnb";
+import BoxUe from "../boxComponents/BoxUe";
+import BoxApps from "../boxComponents/BoxApps";
 const gnbInfo = [
   "PLMN",
   "Banda",
@@ -28,7 +28,7 @@ const bodyItens = [
 export default function BodyDeplo5g(props) {
   const bodyStyle = {
     bgcolor: "white",
-    height: "100vh",
+    height: "90vh",
     alignItems: "center",
     flexDirection: "Column",
     padding: 3,

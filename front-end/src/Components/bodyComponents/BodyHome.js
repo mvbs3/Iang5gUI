@@ -1,8 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import bgLab from "./img/bodyLogo.jpeg";
-import CardDeploy from "./CardDeploy";
+import bgLab from "../img/bodyLogo.jpeg";
+import CardDeploy from "../auxiliarComponents/CardDeploy";
 
 export default function BodyHome() {
   function cardsEnviroment() {
@@ -78,7 +78,7 @@ export default function BodyHome() {
       </Container>
       <Box
         sx={{
-          bgcolor: "#1976D2",
+          bgcolor: "#54849C",
           height: "40%",
           alignItems: "center",
           flexDirection: "columns",

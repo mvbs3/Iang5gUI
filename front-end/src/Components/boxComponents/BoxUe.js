@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { ToggleSelector } from "./ToggleSelector";
+import { ToggleSelector } from "../auxiliarComponents/ToggleSelector";
 
 export default function BoxUe(props) {
   return (

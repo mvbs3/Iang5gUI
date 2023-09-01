@@ -3,9 +3,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import "./App.css";
 import Header from "./Components/Header";
 import { Routes, Route } from "react-router-dom";
-import BodyHome from "./Components/BodyHome";
-import BodyDeploy5gSA from "./Components/BodyDeploy5gSA";
-import BodyDeploy4g from "./Components/BodyDeploy4g";
+import BodyHome from "./Components/bodyComponents/BodyHome";
+import BodyDeploy5gSA from "./Components/bodyComponents/BodyDeploy5gSA";
+import BodyDeploy4g from "./Components/bodyComponents/BodyDeploy4g";
 
 function App() {
   return (
