@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import DialogButton from "../auxiliarComponents/DialogButton";
-import Dropdown5gDeploys from "../auxiliarComponents/Dropdown5gDeploy";
+import Dropdown5gDeploys from "../auxiliarComponents/DropdownGeneric";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
@@ -13,22 +13,22 @@ export default function BoxCore5gEnviromentFunctions(props) {
   const netFunctionsData = ["UPF"];
   const coreType = {
     minimalist: {
-      netFunctionsControl: ["AMF", "SMF"],
+      "Control Net. Func.": ["AMF", "SMF"],
       signaling: ["NRF"],
-      dataBase: ["MYSQL"],
-      netFunctionsData: ["UPF"],
+      "Data Base": ["MYSQL"],
+      "Data Netwok Functions": ["UPF"],
     },
     basic: {
-      netFunctionsControl: ["AMF", "SMF"],
-      signaling: ["NRF", "AUSF"],
-      dataBase: ["UDM", "UDR", "MYSQL"],
-      netFunctionsData: ["UPF"],
+      "Control Net. Func.": ["AMF", "SMF"],
+      Signaling: ["NRF", "AUSF"],
+      "Data Base": ["UDM", "UDR", "MYSQL"],
+      "Data Netwok Functions": ["UPF"],
     },
     slice: {
-      netFunctionsControl: ["AMF", "SMF", "NSSF"],
+      "Control Net. Func.": ["AMF", "SMF", "NSSF"],
       signaling: ["NRF", "AUSF"],
-      dataBase: ["UDM", "UDR", "MYSQL"],
-      netFunctionsData: ["SPGWU", "UPF-VPP"],
+      "Data Base": ["UDM", "UDR", "MYSQL"],
+      "Data Netwok Functions": ["SPGWU", "UPF-VPP"],
     },
   };
   const [statusCore5g, setStatusCore5g] = useState({
@@ -87,55 +87,28 @@ export default function BoxCore5gEnviromentFunctions(props) {
             justifyContent: "center ",
           }}
         >
-          {Object.keys(coreType)}
-          <div style={dottedLine}>
-            <h3>Netwok Functions</h3>
-            <div style={netFunctionStyle}>
-              {netFunctionsControl.map((component) => {
-                return (
-                  <DialogButton
-                    CoreComponnents={component}
-                    StyleButton={props.isFunctionOnline(
-                      component,
-                      statusCore5g
-                    )}
-                  ></DialogButton>
-                );
-              })}
-            </div>
-          </div>
-          <div style={dottedLine}>
-            <h3>Signaling</h3>
-            <div style={netFunctionStyle}>
-              {signaling.map((component) => {
-                return (
-                  <DialogButton
-                    CoreComponnents={component}
-                    StyleButton={props.isFunctionOnline(
-                      component,
-                      statusCore5g
-                    )}
-                  ></DialogButton>
-                );
-              })}
-            </div>
-          </div>
-          <div style={dottedLine}>
-            <h3>Data Base</h3>
-            <div style={netFunctionStyle}>
-              {dataBase.map((component) => {
-                return (
-                  <DialogButton
-                    CoreComponnents={component}
-                    StyleButton={props.isFunctionOnline(
-                      component,
-                      statusCore5g
-                    )}
-                  ></DialogButton>
-                );
-              })}
-            </div>
-          </div>
+          {Object.keys(coreType[props.deploy]).map((obj) => {
+            if (obj != "Data Netwok Functions") {
+              return (
+                <div style={dottedLine}>
+                  <h3>{obj}</h3>
+                  <div style={netFunctionStyle}>
+                    {coreType[props.deploy][obj].map((component) => {
+                      return (
+                        <DialogButton
+                          CoreComponnents={component}
+                          StyleButton={props.isFunctionOnline(
+                            component,
+                            statusCore5g
+                          )}
+                        ></DialogButton>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
       <div
@@ -156,20 +129,22 @@ export default function BoxCore5gEnviromentFunctions(props) {
         >
           <div style={{}}>
             <div style={dottedLine}>
-              <h3>Netwok Functions</h3>
+              <h3>Data Netwok Functions</h3>
 
               <div style={netFunctionStyle}>
-                {netFunctionsData.map((component) => {
-                  return (
-                    <DialogButton
-                      CoreComponnents={component}
-                      StyleButton={props.isFunctionOnline(
-                        component,
-                        statusCore5g
-                      )}
-                    ></DialogButton>
-                  );
-                })}
+                {coreType[props.deploy]["Data Netwok Functions"].map(
+                  (component) => {
+                    return (
+                      <DialogButton
+                        CoreComponnents={component}
+                        StyleButton={props.isFunctionOnline(
+                          component,
+                          statusCore5g
+                        )}
+                      ></DialogButton>
+                    );
+                  }
+                )}
               </div>
             </div>
           </div>

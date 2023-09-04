@@ -2,14 +2,14 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import DialogButton from "../auxiliarComponents/DialogButton";
-import Dropdown5gDeploys from "../auxiliarComponents/Dropdown5gDeploy";
+import Dropdown5gDeploys from "../auxiliarComponents/DropdownGeneric";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import BoxCore5gDeployType from "./BoxCore5gDeployType";
 import BoxCore5gEnviromentFunctions from "./BoxCore5gEnviromentFunctions";
 
 export default function BoxCore5g(props) {
-  const [deploy, setDeploy] = React.useState("");
+  const [deploy, setDeploy] = React.useState("basic");
 
   const netFunctionsControl = ["AMF", "SMF"];
   const signaling = ["NRF", "AUSF"];
@@ -61,7 +61,10 @@ export default function BoxCore5g(props) {
             setDeploy={setDeploy}
             buttonCoreStyle={buttonCoreStyle}
           />
-          <BoxCore5gEnviromentFunctions isFunctionOnline={isFunctionOnline} />
+          <BoxCore5gEnviromentFunctions
+            isFunctionOnline={isFunctionOnline}
+            deploy={deploy}
+          />
         </div>
       </div>
     </Box>

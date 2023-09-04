@@ -4,10 +4,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function Dropdown5gDeploys(props) {
-  const deploy5g = ["Minimalist", "Basic", "Slice"];
+export default function DropdownGeneric(props) {
   const handleChange = (event) => {
-    props.setDeploy(event.target.value);
+    props.setSelect(event.target.value);
   };
 
   return (
@@ -19,11 +18,11 @@ export default function Dropdown5gDeploys(props) {
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={props.Deploy}
-        label="Deploy"
+        value={props.Select}
+        label={props.Title}
         onChange={handleChange}
       >
-        {deploy5g.map((elem) => {
+        {props.Elements.map((elem) => {
           return <MenuItem value={elem}>{elem}</MenuItem>;
         })}
       </Select>

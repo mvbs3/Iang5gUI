@@ -1,8 +1,16 @@
 import * as React from "react";
-import Dropdown5gDeploys from "../auxiliarComponents/Dropdown5gDeploy";
+import DropdownGeneric from "../auxiliarComponents/DropdownGeneric";
 import Button from "@mui/material/Button";
 
 export default function BoxCore5gDeployType(props) {
+  const deploy5g = ["minimalist", "basic", "slice"];
+  const dropdownBoxStyle = {
+    flexDirection: "row",
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    maxHeight: "100%",
+  };
   return (
     <div
       style={{
@@ -26,19 +34,13 @@ export default function BoxCore5gDeployType(props) {
       </div>
 
       <div style={{ height: "100%" }}>
-        <div
-          style={{
-            flexDirection: "row",
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            maxHeight: "100%",
-          }}
-        >
+        <div style={dropdownBoxStyle}>
           <h2> Core Type </h2>
-          <Dropdown5gDeploys
-            deploy={props.deploy}
-            setDeploy={props.setDeploy}
+          <DropdownGeneric
+            Elements={deploy5g}
+            Title="Deploy"
+            Select={props.deploy}
+            setSelect={props.setDeploy}
           />
         </div>
 
