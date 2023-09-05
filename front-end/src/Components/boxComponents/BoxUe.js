@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { ToggleSelector } from "../auxiliarComponents/ToggleSelector";
 import DropdownGeneric from "../auxiliarComponents/DropdownGeneric";
@@ -12,15 +12,21 @@ export default function BoxUe(props) {
     alignItems: "center",
     maxHeight: "100%",
   };
+  const options = { select1: "UeEmulada", select2: "Android" };
+  const [toggleValue, setToggleValue] = useState("select1");
   return (
     <Box sx={props.componentsBox}>
       <div style={props.titleBodyDivider}>
         <div style={{ height: "100%", paddingTop: "5px" }}>
-          <ToggleSelector />
+          <ToggleSelector
+            options={options}
+            toggleValue={toggleValue}
+            setToggleValue={setToggleValue}
+          />
         </div>
         <div style={{ height: "100%" }}>
           <div style={dropdownBoxStyle}>
-            <h2> Core Type </h2>
+            <h2> Criar UE's</h2>
             <DropdownGeneric
               Elements={ueNumber}
               Title="UeNumber"

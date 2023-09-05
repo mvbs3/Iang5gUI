@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import "./ToggleSelector.css";
 
+function getKeyByValue(object, value) {
+  return Object.keys(object).find((key) => object[key] === value);
+}
+
 export function ToggleSelector(props) {
-  const options = ["MEC", "Remote Server"];
-  const [toggleValue, setToggleValue] = useState(options[0]);
+  const options = ["select1", "select2"];
 
   const toggleOption = () => {
-    const currentIndex = options.indexOf(toggleValue);
+    console.log(getKeyByValue(props.options, props.toggleValue));
+    const currentIndex = options.indexOf(props.toggleValue);
     const nextIndex = (currentIndex + 1) % options.length;
-    setToggleValue(options[nextIndex]);
+    props.setToggleValue(options[nextIndex]);
   };
 
   return (
     <div className="toggle-container" onClick={toggleOption}>
-      <div className={`slider ${toggleValue}`}>
-        <span className={`slider-text ${toggleValue}`}>{toggleValue}</span>
+      <div className={`slider ${props.toggleValue}`}>
+        <span className={`slider-text ${props.toggleValue}`}>
+          {props.options[props.toggleValue]}
+        </span>
       </div>
-      <div className="title MEC">MEC</div>
-      <div className="title Server">Remote Server</div>
+      {options.map((elem) => {
+        return <div className={`title ${elem}`}>{props.options[elem]}</div>;
+      })}
     </div>
   );
 }

@@ -26,9 +26,10 @@ const bodyItens = [
 ];
 
 export default function BodyDeplo5g(props) {
+  //ESSE AQUI DEFINE O TAMANHO DA TELA
   const bodyStyle = {
     bgcolor: "white",
-    height: "90vh",
+    height: "120vh",
     alignItems: "center",
     flexDirection: "Column",
     padding: 3,

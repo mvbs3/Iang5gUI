@@ -6,11 +6,10 @@
   position: relative;
   cursor: pointer;
   font-family: lora, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
 }
 
 .slider {
@@ -27,27 +26,27 @@
 }
 
 .slider-text {
-  font-size: 16px; /* Set the font size of the text */
+  font-size: 14px; /* Set the font size of the text */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.slider-text.MEC {
-  color: #333; /* Dark gray for MEC */
+.slider-text.select1 {
+  color: #333; /* Dark gray for select1 */
 }
 
-.slider-text.Server {
-  color: #524f4f; /* Medium gray for Server */
+.slider-text.select2 {
+  color: #524f4f; /* Medium gray for select2 */
 }
 
-.slider.MEC {
+.slider.select1 {
   left: 0%; /* Adjusted position */
   background: lightblue; /* Light shade of blue */
 }
 
-.slider.Server {
+.slider.select2 {
   left: 50%;
   background: rgb(87, 158, 230); /* Medium shade of blue */
 }
@@ -58,10 +57,13 @@
   box-sizing: border-box;
 }
 
-.title.MEC {
+.title.select1 {
+  font-size: 14px;
   color: #245494;
 }
 
-.title.Server {
+.title.select2 {
+  align-items: center;
+  font-size: 14px;
   color: #501c1c;
 }
