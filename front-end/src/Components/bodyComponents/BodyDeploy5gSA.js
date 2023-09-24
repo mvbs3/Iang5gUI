@@ -70,7 +70,36 @@ export default function BodyDeplo5g(props) {
     justifyContent: "space-around",
     alignItems: "center",
   };
-
+  function isFunctionOnline(coreFunc, statusCoreFunc) {
+    const online = {
+      backgroundColor: "#264A61",
+      fontSize: "15px",
+      padding: "10px 20px",
+      margin: "5px",
+      color: "black",
+    };
+    const offline = {
+      backgroundColor: "#91a0a9",
+      fontSize: "15px",
+      padding: "10px 20px",
+      margin: "5px",
+      color: "black",
+    };
+    const bug = {
+      backgroundColor: "yellow",
+      fontSize: "15px",
+      padding: "10px 20px",
+      margin: "5px",
+      color: "black",
+    };
+    if (statusCoreFunc[coreFunc] === "Online") {
+      return online;
+    } else if (statusCoreFunc[coreFunc] === "Offline") {
+      return offline;
+    } else {
+      return bug;
+    }
+  }
   return (
     <Box sx={bodyStyle}>
       <div style={wrapBox}>
@@ -78,6 +107,7 @@ export default function BodyDeplo5g(props) {
           componentsBox={componentsBox}
           boxInside={boxInside}
           titleBodyDivider={titleBodyDivider}
+          isFunctionOnline={isFunctionOnline}
         />
       </div>
       <div style={wrapBox}>
@@ -88,6 +118,7 @@ export default function BodyDeplo5g(props) {
         <BoxGnb
           componentsBox={componentsBox}
           titleBodyDivider={titleBodyDivider}
+          isFunctionOnline={isFunctionOnline}
         />
 
         <BoxApps

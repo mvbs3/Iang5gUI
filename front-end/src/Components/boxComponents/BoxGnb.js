@@ -1,7 +1,12 @@
 import * as React from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
+import DialogButton from "../auxiliarComponents/DialogButton";
 
 export default function BoxGnb(props) {
+  const [statusGnb, setStatusGnb] = useState({
+    GNB: "Offline",
+  });
   return (
     <Box sx={props.componentsBox}>
       <div style={props.titleBodyDivider}>
@@ -9,12 +14,19 @@ export default function BoxGnb(props) {
           <h1 style={{ textAlign: "center" }}>GNB SA(OpenAir) </h1>
         </div>
 
-        <div
+        <Box
           style={{
             display: "flex",
             justifyContent: "flex-end",
           }}
-        ></div>
+        ></Box>
+        <Box>
+          <DialogButton
+            CoreComponnents="GNB"
+            StyleButton={props.isFunctionOnline("GNB", statusGnb)}
+          ></DialogButton>
+        </Box>
+
         <div>
           <button>Devices Conectados</button>
           <button>Ligar</button>

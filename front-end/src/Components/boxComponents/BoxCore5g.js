@@ -62,7 +62,7 @@ export default function BoxCore5g(props) {
             buttonCoreStyle={buttonCoreStyle}
           />
           <BoxCore5gEnviromentFunctions
-            isFunctionOnline={isFunctionOnline}
+            isFunctionOnline={props.isFunctionOnline}
             deploy={deploy}
           />
         </div>

@@ -11,7 +11,7 @@ router.get("/teste", (req, res) => {
   //res.send("teste");
   //res.download("server.js")
   //res.render
-  res.status(200).json({ message: "testandoo rota user/teste" });
+  res.status(200).json({ message: "testandoo rota user/teste  " });
 });
 
 module.exports = router;
