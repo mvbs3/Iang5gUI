@@ -12,5 +12,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Error" });
 });
 const userRouter = require("./routes/users");
+const oaiRouter = require("./routes/oai");
 app.use("/users", userRouter);
+app.use("/oai", oaiRouter);
 app.listen(port);

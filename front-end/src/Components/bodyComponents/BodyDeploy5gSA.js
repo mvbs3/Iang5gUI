@@ -1,9 +1,6 @@
 import * as React from "react";
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import DialogButton from "../auxiliarComponents/DialogButton";
-import gnb from "../img/gnb.png";
+
 import BoxCore5g from "../boxComponents/BoxCore5g";
 import BoxGnb from "../boxComponents/BoxGnb";
 import BoxUe from "../boxComponents/BoxUe";
@@ -30,6 +27,7 @@ export default function BodyDeplo5g(props) {
   const bodyStyle = {
     bgcolor: "white",
     height: "120vh",
+    width: "100vw",
     alignItems: "center",
     flexDirection: "Column",
     padding: 3,
@@ -57,6 +55,7 @@ export default function BodyDeplo5g(props) {
   };
   const componentsBox = {
     height: "100%",
+    width: "100%",
     alignItems: "center",
     padding: "10px",
     flexBasis: "100%",

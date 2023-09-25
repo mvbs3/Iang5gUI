@@ -1,16 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import Box from "@mui/material/Box";
 import DialogButton from "../auxiliarComponents/DialogButton";
-import Dropdown5gDeploys from "../auxiliarComponents/DropdownGeneric";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 export default function BoxCore5gEnviromentFunctions(props) {
-  const netFunctionsControl = ["AMF", "SMF"];
-  const signaling = ["NRF", "AUSF"];
-  const dataBase = ["UDM", "UDR", "MYSQL"];
-  const netFunctionsData = ["UPF"];
   const coreType = {
     minimalist: {
       "Control Net. Func.": ["AMF", "SMF"],

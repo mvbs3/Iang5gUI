@@ -1,55 +1,47 @@
 import * as React from "react";
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import DialogButton from "../auxiliarComponents/DialogButton";
-import Dropdown5gDeploys from "../auxiliarComponents/DropdownGeneric";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import BoxCore5gDeployType from "./BoxCore5gDeployType";
 import BoxCore5gEnviromentFunctions from "./BoxCore5gEnviromentFunctions";
 
 export default function BoxCore5g(props) {
   const [deploy, setDeploy] = React.useState("basic");
 
-  const netFunctionsControl = ["AMF", "SMF"];
-  const signaling = ["NRF", "AUSF"];
-  const dataBase = ["UDM", "UDR", "MYSQL"];
-  const netFunctionsData = ["UPF"];
-
-  function isFunctionOnline(coreFunc, statusCoreFunc) {
-    const online = {
-      backgroundColor: "#264A61",
-      fontSize: "15px",
-      padding: "10px 20px",
-      margin: "5px",
-      color: "black",
-    };
-    const offline = {
-      backgroundColor: "#91a0a9",
-      fontSize: "15px",
-      padding: "10px 20px",
-      margin: "5px",
-      color: "black",
-    };
-    const bug = {
-      backgroundColor: "yellow",
-      fontSize: "15px",
-      padding: "10px 20px",
-      margin: "5px",
-      color: "black",
-    };
-    if (statusCoreFunc[coreFunc] === "Online") {
-      return online;
-    } else if (statusCoreFunc[coreFunc] === "Offline") {
-      return offline;
-    } else {
-      return bug;
-    }
-  }
   const buttonCoreStyle = {
-    color: "#54849C",
+    //color: "#54849C",
     margin: 5,
     color: "black",
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    padding: "6px 12px",
+    border: "1px solid",
+    lineHeight: 1.5,
+    borderColor: "#0063cc",
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    "&:hover": {
+      backgroundColor: "#0069d9",
+      borderColor: "#0062cc",
+      boxShadow: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "#0062cc",
+      borderColor: "#005cbf",
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
+    },
   };
 
   return (

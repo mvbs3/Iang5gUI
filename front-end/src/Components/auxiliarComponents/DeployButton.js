@@ -39,7 +39,7 @@ export default function DeployButton() {
         <MenuItem
           onClick={() => {
             handleClose();
-            navigate("Deploy5gSa");
+            navigate("Deploy5gSaOai");
           }}
         >
           Oai 5g SA
@@ -47,7 +47,7 @@ export default function DeployButton() {
         <MenuItem
           onClick={() => {
             handleClose();
-            navigate("Deploy5gSa");
+            navigate("Deploy5gSaOpen5g");
           }}
         >
           Open5gs SA
