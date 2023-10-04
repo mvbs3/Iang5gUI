@@ -30,17 +30,17 @@ export default function BodyDeplo5g(props) {
     width: "100vw",
     alignItems: "center",
     flexDirection: "Column",
-    padding: 3,
+    padding: 0,
     margin: 1,
     display: "flex",
   };
   const wrapBox = {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "pink",
+    backgroundColor: "",
     height: "100%",
     width: "100%",
-    padding: "10px",
+    padding: "1px",
     flex: "1",
     justifyContent: "center",
   };

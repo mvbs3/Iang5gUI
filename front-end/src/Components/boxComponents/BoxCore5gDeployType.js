@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DropdownGeneric from "../auxiliarComponents/DropdownGeneric";
 import Button from "@mui/material/Button";
-import axios from "axios";
+import {requestOnOff } from "../VarFile";
 
 export default function BoxCore5gDeployType(props) {
   const deploy5g = ["minimalist", "basic", "slice"];
@@ -13,44 +13,8 @@ export default function BoxCore5gDeployType(props) {
     alignItems: "center",
     maxHeight: "100%",
   };
-  const baseUrl = "http://localhost:5000";
 
-  function requestOnOff(coreDeployName, core, deploy, band) {
-    setStatus(!Status);
-    console.log(
-      baseUrl +
-        "/" +
-        coreDeployName +
-        "/" +
-        core +
-        "/" +
-        deploy +
-        "/" +
-        band +
-        "/" +
-        (Status ? "on" : "off")
-    );
-    axios
-      .get(
-        baseUrl +
-          "/" +
-          coreDeployName +
-          "/" +
-          core +
-          "/" +
-          deploy +
-          "/" +
-          band +
-          "/" +
-          (Status ? "on" : "off")
-      )
-      .then((res) => {
-        const dados = res.data;
-        console.log(dados);
-
-        console.log(dados);
-      });
-  }
+  
   return (
     <div
       style={{
@@ -105,7 +69,7 @@ export default function BoxCore5gDeployType(props) {
               style={props.buttonCoreStyle}
               variant="contained"
               size="small"
-              onClick={() => requestOnOff("oai", "5g", props.deploy, "78")}
+              onClick={() => requestOnOff("core","oai", props.deploy, Status, setStatus)}
             >
               {Status ? "Ligar" : "Desligar"}
             </Button>

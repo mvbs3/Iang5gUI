@@ -12,7 +12,11 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Error" });
 });
 const userRouter = require("./routes/users");
-const oaiRouter = require("./routes/oai");
+const coreRouter = require("./routes/core");
+const gnbRouter = require("./routes/gnb");
+const ueRouter = require("./routes/ue");
 app.use("/users", userRouter);
-app.use("/oai", oaiRouter);
+app.use("/core", coreRouter);
+app.use("/gnb", gnbRouter);
+app.use("/ue", ueRouter);
 app.listen(port);
