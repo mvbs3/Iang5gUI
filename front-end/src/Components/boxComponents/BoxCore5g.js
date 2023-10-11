@@ -6,6 +6,7 @@ import BoxCore5gEnviromentFunctions from "./BoxCore5gEnviromentFunctions";
 export default function BoxCore5g(props) {
   const [deploy, setDeploy] = React.useState("basic");
 
+
   const buttonCoreStyle = {
     //color: "#54849C",
     margin: 5,
@@ -46,6 +47,7 @@ export default function BoxCore5g(props) {
 
   return (
     <Box sx={props.componentsBox}>
+    
       <div style={props.titleBodyDivider}>
         <div style={props.boxInside}>
           <BoxCore5gDeployType

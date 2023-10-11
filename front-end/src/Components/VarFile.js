@@ -31,6 +31,40 @@ export function requestOnOff(component, deploy, type, Status, setStatus) {
         const dados = res.data;
         console.log(dados);
 
-        console.log(dados);
       });
+  }
+
+  export function requestStatus(component, deploy, type, status, setStatus) {
+    
+    console.log(
+      baseUrl +
+        "/" +
+        component +
+        "/" +
+        deploy +
+        "/" +
+        type +
+        "/" +
+        "status"
+    );
+    axios
+      .get(
+        baseUrl +
+          "/" +
+          component +
+          "/" +
+          deploy +
+          "/" +
+          type +
+          "/" +
+          "status"
+      )
+      .then((res) => {
+        const dados = res.data;
+        console.log("dados");
+        console.log(dados);
+        setStatus(dados)
+        
+      });
+      
   }

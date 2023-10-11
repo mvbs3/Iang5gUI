@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DropdownGeneric from "../auxiliarComponents/DropdownGeneric";
 import Button from "@mui/material/Button";
-import {requestOnOff } from "../VarFile";
+import {requestOnOff,requestStatus } from "../VarFile";
 
 export default function BoxCore5gDeployType(props) {
   const deploy5g = ["minimalist", "basic", "slice"];
@@ -15,6 +15,7 @@ export default function BoxCore5gDeployType(props) {
   };
 
   
+
   return (
     <div
       style={{

@@ -13,7 +13,22 @@ const core = {"basic" :[
   "oai-udr",
   "oai-ausf",
   "mysql",
-] };
+], 
+"minimalist" : [
+  "oai-amf",
+  "oai-smf", 
+  "oai-nrf",
+  "mysql",
+  "oai-spgwu"
+], "slice":
+["oai-amf",
+"oai-smf",
+"oai-spgwu",
+"oai-nrf",
+"oai-udm",
+"oai-udr",
+"oai-ausf",
+"mysql","upf-vpp"]};
 
 function resultTerminal(err, output) {
   // once the command has completed, the callback function is called
